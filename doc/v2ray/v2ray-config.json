@@ -1,0 +1,88 @@
+{
+    "poseidon": {
+    "panel": "sspanel-webapi",
+    "license_key": "付费用户填写",
+    "nodeId": 节点id,
+    "checkRate": 60,
+    "panelUrl": "https://面板地址",
+    "panelKey": "面板mukey",
+    "user": {
+      "inboundTag": "proxy",
+      "level": 0,
+      "alterId": 2,
+      "security": "none"
+    }
+  },
+  "log": {
+    "loglevel": "debug"
+  },
+  "api": {
+    "tag": "api",
+    "services": [
+      "HandlerService",
+      "LoggerService",
+      "StatsService"
+    ]
+  },
+  "stats": {},
+  "inbounds": [
+    {
+      "port": 1443, //可更改
+      "protocol": "vmess",
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/"
+        },
+		"security": "tls", //必须设置该项才能启用TLS
+		"tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "/etc/v2ray/v2ray.crt", //证书文件 
+              "keyFile": "/etc/v2ray/v2ray.key" //密钥文件
+            }
+          ]
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 9876, //可更改
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api"
+      }
+    ],
+    "strategy": "rules"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserUplink": true,
+        "statsUserDownlink": true
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true
+    }
+  }
+}
