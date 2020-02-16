@@ -13,7 +13,7 @@
              curl https://get.acme.sh | sh
 
         安装成功后执行:
-             source ~/.bashrc`
+             source ~/.bashrc
 
         如果缺少`netcat`:
              sudo apt-get -y install netcat
