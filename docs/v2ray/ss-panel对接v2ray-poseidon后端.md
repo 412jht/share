@@ -1,6 +1,6 @@
 # **ss-panel 对接 v2ray-poseidon后端**
 1. ## 安装
-       url -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-poseidon/master/install-release.sh | sudo bash
+       curl -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-poseidon/master/install-release.sh | sudo bash
 
 2. ## 配置
   - v2ray配置
