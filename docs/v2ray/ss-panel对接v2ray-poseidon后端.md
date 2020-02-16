@@ -32,10 +32,10 @@
       - 证书更新：
       由于 Let's Encrypt 的证书有效期只有 3 个月，因此需要 90 天至少要更新一次证书，acme.sh 脚本会每 60 天自动更新证书。也可以手动更新。
 
-        手动更新 ECC 证书，执行：
+        手动更新 ECC 证书，执行：  
              sudo ~/.acme.sh/acme.sh --renew -d mydomain.com --force --ecc
       - 安装证书：
-      将 ECC 证书和密钥安装到 /etc/v2ray 中：
+      将 ECC 证书和密钥安装到 /etc/v2ray 中：  
              sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
 
   - ss-panel配置：
