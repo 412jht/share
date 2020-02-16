@@ -36,7 +36,7 @@
              sudo ~/.acme.sh/acme.sh --renew -d mydomain.com --force --ecc
       - 安装证书：
       将 ECC 证书和密钥安装到 /etc/v2ray 中：  
-             sudo ~/.acme.sh/acme.sh --installcert -d mydomain.me --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
+             sudo ~/.acme.sh/acme.sh --installcert -d 域名 --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
 
   - ss-panel配置：
     1. 新增节点；
