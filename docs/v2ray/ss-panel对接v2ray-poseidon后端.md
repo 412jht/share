@@ -26,7 +26,7 @@
         - 设置API变量：  
                export CF_Key = "配置好的API"  
                export CF_Email = "用户名邮箱"`
-        - 生成证书：
+        - 生成证书：  
                sudo ~/.acme.sh/acme.sh --issue --dns dns_cf -d 域名 --standalone -k ec-256
 
       - 证书更新：
