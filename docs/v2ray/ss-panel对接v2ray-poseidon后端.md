@@ -24,8 +24,8 @@
         如果使用的是cloudflare进行域名解析，可以调用api进行域名验证：
         - 开启API：https://dash.cloudflare.com/profile/api-tokens
         - 设置API变量：  
-               export CF_Key = "配置好的API"  
-               export CF_Email = "用户名邮箱"`
+               export CF_Key="配置好的API"  
+               export CF_Email="用户名邮箱"`
         - 生成证书：  
                sudo ~/.acme.sh/acme.sh --issue --dns dns_cf -d 域名 --standalone -k ec-256
 
